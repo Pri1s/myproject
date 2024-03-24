@@ -1,0 +1,18 @@
+<!-- class_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Grades for Each Class</title>
+</head>
+<body>
+    <h2>Enter Grades for Each Class</h2>
+    <form id="gradeForm">
+        {% for i in class_numbers %}
+        <label for="class{{ i }}">Grade for Class {{ i }}:</label>
+        <input type="text" id="class{{ i }}" name="class{{ i }}" required><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
