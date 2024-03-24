@@ -1,0 +1,15 @@
+<!-- myapp/templates/myapp/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPA Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'myapp/script.js' %}"></script>
+</head>
+<body>
+    <h1>Welcome to the GPA Calculator</h1>
+    <p>Please click the button below to enter the number of classes you have:</p>
+    <a href="{% url 'class_count' %}">Enter Number of Classes</a>
+</body>
+</html>
