@@ -23,4 +23,5 @@ urlpatterns = [
     #path('my_function/', views.my_function, name='my_function'),
     path('class_count/', views.class_count, name='class_count'),  # This is the updated line
     path('class_info/', views.class_info, name='class_info'),
+    path('calculations/', views.calculations, name='calculations'),
 ]

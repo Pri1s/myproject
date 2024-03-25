@@ -1,0 +1,16 @@
+<!-- calculations.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculations</title>
+</head>
+<body>
+    <h1>GPA Calculations</h1>
+    <p>Unweighted GPA: <span id="unweighted-gpa"></span></p>
+    <p>Weighted GPA: <span id="weighted-gpa"></span></p>
+    <div id="class-info-json" style="display: none;">{{ class_info_json }}</div>
+    <script src="{% static 'myapp/calculations.js' %}"></script>
+</body>
+</html>
