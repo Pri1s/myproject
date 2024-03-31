@@ -5,11 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <title>GPA Calculator</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to the GPA Calculator</h1>
-    <p>Please click the button below to enter the number of classes you have:</p>
-    <a href="{% url 'class_count' %}">Enter Number of Classes</a>
+    <div class="background">
+        <div class="container">
+            <h1>Welcome to the GPA Calculator</h1>
+            <br>
+            <p>Please click the button below to proceed</p>
+            <br>
+            <div class="button-container">
+                <a class="button-behavior" href="{% url 'class_count' %}">Proceed</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

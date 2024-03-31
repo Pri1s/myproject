@@ -4,14 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Enter Number of Classes</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
 <body>
-    <h2>Enter Number of Classes</h2>
-    <form id="classCountForm">
-        <label for="classCount">Number of Classes:</label>
-        <input type="number" id="classCount" name="classCount" min="1" required>
-        <button type="submit">Next</button>
-    </form>
-    <script src="{% static 'myapp/class_count.js' %}"></script>
+    
+    <div class="background">
+        <div class="container">
+            <h2>Enter Number of Classes</h2>
+            <form id="classCountForm">
+                <label for="classCount">Number of Classes:</label>
+                <input type="number" id="classCount" name="classCount" min="1" required>
+                <button type="submit">Next</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'myapp/js/class_count.js' %}"></script>
 </body>
 </html>

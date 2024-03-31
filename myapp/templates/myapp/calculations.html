@@ -5,12 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculations</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
 <body>
-    <h1>GPA Calculations</h1>
-    <p>Unweighted GPA: <span id="unweighted-gpa"></span></p>
-    <p>Weighted GPA: <span id="weighted-gpa"></span></p>
-    <div id="class-info-json" style="display: none;">{{ class_info_json }}</div>
-    <script src="{% static 'myapp/calculations.js' %}"></script>
+    
+    <div class="background">
+        <div class="container">
+            <h1>GPA Calculations</h1>
+            <p>Unweighted GPA: <span id="unweighted-gpa"></span></p>
+            <p>Weighted GPA: <span id="weighted-gpa"></span></p>
+            <div id="class-info-json" style="display: none;">{{ class_info_json }}</div>
+        </div>
+    </div>
+
+    <script src="{% static 'myapp/js/calculations.js' %}"></script>
 </body>
 </html>

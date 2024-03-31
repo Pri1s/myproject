@@ -5,28 +5,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Enter Class Information</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
 <body>
-    <h2>Enter Class Information</h2>
-    <form id="classInfoForm">
-        {% for class_number in class_numbers %}
-        <fieldset>
-            <legend>Class {{ class_number }}</legend>
-            <label for="class{{ class_number }}_name">Class Name:</label>
-            <input type="text" id="class{{ class_number }}_name" name="class{{ class_number }}_name" required><br>
-            <label for="class{{ class_number }}_grade">Class Grade:</label>
-            <input type="number" id="class{{ class_number }}_grade" name="class{{ class_number }}_grade" min="0" max="100" required><br>
-            <label for="class{{ class_number }}_rigor">Class Rigor:</label>
-            <select id="class{{ class_number }}_rigor" name="class{{ class_number }}_rigor" required>
-                {% for choice in rigor_choices %}
-                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-            </select><br>
-        </fieldset>
-        {% endfor %}
-        <button type="submit">Submit</button>
-    </form>
 
-    <script src="{% static 'myapp/class_info.js' %}"></script>
+    <div class="background">
+        <div class="container">
+            <h2>Enter Class Information</h2>
+            <form id="classInfoForm">
+                {% for class_number in class_numbers %}
+                <div class="class-container">
+                    <h2>Class {{ class_number }}</h1>
+                    <label for="class{{ class_number }}_name">Class Name:</label>
+                    <input type="text" id="class{{ class_number }}_name" name="class{{ class_number }}_name" required><br>
+                    <label for="class{{ class_number }}_grade">Class Grade:</label>
+                    <input type="number" id="class{{ class_number }}_grade" name="class{{ class_number }}_grade" min="0" max="100" required><br>
+                    <label for="class{{ class_number }}_rigor">Class Rigor:</label>
+                    <select id="class{{ class_number }}_rigor" name="class{{ class_number }}_rigor" required>
+                        {% for choice in rigor_choices %}
+                        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                        {% endfor %}
+                    </select><br>
+                </div>
+                {% endfor %}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'myapp/js/class_info.js' %}"></script>
 </body>
 </html>
