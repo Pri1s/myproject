@@ -1,5 +1,5 @@
-<!-- calculations.html -->
-{% load static %}
+{% load static %} <!-- Reference static files -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
 <body>
-    
+
     <div class="background">
         <div class="container">
-            <h1>GPA Calculations</h1>
-            <p>Unweighted GPA: <span id="unweighted-gpa"></span></p>
-            <p>Weighted GPA: <span id="weighted-gpa"></span></p>
-            <div id="class-info-json" style="display: none;">{{ class_info_json }}</div>
+            <div class="card">
+                <h1>GPA Calculations</h1>
+                <!-- Displays weighted and unweighted GPA, calculated from 'calculations.js' -->
+                <p>Unweighted GPA: <span id="unweighted-gpa"></span></p>
+                <p>Weighted GPA: <span id="weighted-gpa"></span></p>
+                <!-- Stores 'class-info' context passed from 'views.py as a variable so 'calculation.js' can access the data-->
+                <div id="class-info" style="display: none;">{{ class_info }}</div>
+                <!-- Sends users back to the previous page -->
+                <button class ="card-button" onclick="window.history.go(-1)">Return</button>
+            </div>
         </div>
     </div>
 

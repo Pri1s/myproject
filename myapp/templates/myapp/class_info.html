@@ -1,5 +1,5 @@
-<!-- class_info.html -->
-{% load static %}
+{% load static %} <!-- Reference static files -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,25 +11,32 @@
 
     <div class="background">
         <div class="container">
-            <h2>Enter Class Information</h2>
-            <form id="classInfoForm">
-                {% for class_number in class_numbers %}
-                <div class="class-container">
-                    <h2>Class {{ class_number }}</h1>
-                    <label for="class{{ class_number }}_name">Class Name:</label>
-                    <input type="text" id="class{{ class_number }}_name" name="class{{ class_number }}_name" required><br>
-                    <label for="class{{ class_number }}_grade">Class Grade:</label>
-                    <input type="number" id="class{{ class_number }}_grade" name="class{{ class_number }}_grade" min="0" max="100" required><br>
-                    <label for="class{{ class_number }}_rigor">Class Rigor:</label>
-                    <select id="class{{ class_number }}_rigor" name="class{{ class_number }}_rigor" required>
-                        {% for choice in rigor_choices %}
-                        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                        {% endfor %}
-                    </select><br>
-                </div>
-                {% endfor %}
-                <button type="submit">Submit</button>
-            </form>
+            <div class="card">
+                <h2>Enter Class Information</h2>
+                <form id="classInfoForm">
+                    <!-- Loops through each number in class_numbers list -->
+                    {% for class_number in class_numbers %}
+                    <div class="card">
+                        <!-- Creates input fields for each class -->
+                        <h2>Class {{ class_number }}</h1>
+                        <label for="class{{ class_number }}_name">Class Name:</label>
+                        <input type="text" id="class{{ class_number }}_name" name="class{{ class_number }}_name" required><br>
+                        <label for="class{{ class_number }}_grade">Class Grade:</label>
+                        <input type="number" id="class{{ class_number }}_grade" name="class{{ class_number }}_grade" min="0" max="100" required><br>
+                        <label for="class{{ class_number }}_rigor">Class Rigor:</label>
+                        <select id="class{{ class_number }}_rigor" name="class{{ class_number }}_rigor" required>
+                            {% for choice in rigor_choices %}
+                            <!-- Populates options for the dropdown -->
+                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                            {% endfor %}
+                        </select><br>
+                    </div>
+                    {% endfor %}
+                    <button class ="card-button" type="submit">Next</button>
+                </form>
+                <!-- Sends users back to the previous page -->
+                <button class ="card-button" onclick="window.history.go(-1)">Return</button>
+            </div>
         </div>
     </div>
 

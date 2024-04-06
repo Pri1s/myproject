@@ -1,24 +1,26 @@
-<!-- myapp/templates/myapp/index.html -->
-{% load static %}
+{% load static %} <!-- Reference static files -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>GPA Calculator</title>
-    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Interface</title>
+  <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="background">
-        <div class="container">
-            <h1>Welcome to the GPA Calculator</h1>
-            <br>
-            <p>Please click the button below to proceed</p>
-            <br>
-            <div class="button-container">
-                <a class="button-behavior" href="{% url 'class_count' %}">Proceed</a>
-            </div>
-        </div>
+  <div class="background">
+    <div class="container">
+      <div class="card">
+        <h1>GPA Calculator</h1>
+        <p>Welcome to the grade-point-average calculater. Here, you'll be able to calculate your weighted and unweighted GPAs with just a few steps! Are you ready to proceed?</p>
+      <div class="card-button">
+         <a class="button-behavior" href="{% url 'class_count' %}"><span>Proceed</span></a>
+         <!-- Sends users to the /class_count URL -->
+       </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>

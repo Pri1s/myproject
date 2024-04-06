@@ -1,16 +1,19 @@
-* {
-  padding: 0;
-  margin: 0;
+* /* Universal font and margin/padding set for the webpage */
+{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+body /* Background image and gradient for the body of the webpage */
+{
+  background-size: cover;
+  background-position: top;
   overflow: hidden;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  color: white;
-}
-
-.background {
+.background { /* Gradient background for the webpage(s) */
   height: 100vh;
   width: 100%;
   background: linear-gradient(45deg, #d2001a, #7462ff);
@@ -18,49 +21,77 @@ body {
   overflow-y: auto; /* Enable scrollbar if form content overflows */
 }
 
-.container {
-  width: 500px; /* Wider container for better spacing */
-  height: auto; /* Remove fixed height for form to fit content */
-  margin: 100px auto;
-  padding: 20px;
-  background: #363434;
-  border-radius: 5px;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto; /* Enable scrollbar if form content overflows */
+.container /* Basic formatting/positioning for the webpage */
+{
+  margin: auto;
+  max-width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.class-container {
-  width: 100%; /* Stretch to full width within container */
-  margin: 15px 0; /* Spacing between class containers */
-  padding: 20px;
-  background: #535353;
-  border-radius: 5px;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto; /* Enable scrollbar if form content overflows */
-}
-
-.button-behavior {
-  font-size: 18px;
-  font-weight: bold;
-  background: #1e90ff;
-  width: 200px;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
+.card /* Creates a glass-box effect */
+{
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  width: 25%;
+  border: solid 0px rgb(0, 0, 0);
   border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
-  transition-property: box-shadow, transform;
+  backdrop-filter: blur(0px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 3rem;
 }
 
-.button-behavior:hover, .button-behavior:focus, .button-behavior:active {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+.card-button /* Creates a glass-box effect for buttons and elements that recreate button behavior */
+{
+  margin-top: 2rem;
+  width: 25%;
+  border: solid 0px rgb(0, 0, 0);
+  border-radius: 10px;
+  backdrop-filter: blur(0px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out; /* Button hover effect transition time */
+}
+
+.card-button:hover  /* Button hover effect */
+{
+  background-color: rgba(214, 250, 216, 0.3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8); 
+  cursor: pointer; 
+  .button-behavior 
+  {  /* Target the text inside the button on hover */
+    font-size: 1.2em;  /* Increase font size by 20% */
+  }
+}
+
+.button-behavior /* Customizations for the text inside the elements that recreate button-like behavior */
+{
+  margin-top: 2rem;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out; /* Button hover effect transition time */
+}
+
+h1, h2, p, .form-text /* Text formatting */
+{
+  margin-top: 2rem;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+@media only screen
+{
+  .card
+  {
+    width: 90% /* Width of the 'card' class, compared to the user's screen */
+  }
 }

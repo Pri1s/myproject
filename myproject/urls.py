@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from myapp import views # Imports all functions from 'views.py' in the myapp directory
 
-urlpatterns = [
-    #path('admin/', admin.site.urls),
+urlpatterns = [ # Handles all URL routing for the webpage
     path('', views.index, name='index'),
-    #path('my_function/', views.my_function, name='my_function'),
-    path('class_count/', views.class_count, name='class_count'),  # This is the updated line
+    path('class_count/', views.class_count, name='class_count'),
     path('class_info/', views.class_info, name='class_info'),
     path('calculations/', views.calculations, name='calculations'),
 ]

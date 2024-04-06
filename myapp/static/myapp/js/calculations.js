@@ -1,3 +1,4 @@
+// Converts grade parameter to a G.P.A on the 4.0 scale
 function unweightedConversion(grade) {
 
   if (grade >= 93) {
@@ -26,6 +27,7 @@ function unweightedConversion(grade) {
 
 }
 
+// Converts the G.P.A on the 4.0 scale to a weighted G.P.A given the multipler for the rigor of the class
 function weightedConversion(gpa, rigor) {
 
   if (rigor == 'Regular') {
@@ -38,6 +40,7 @@ function weightedConversion(gpa, rigor) {
 
 }
 
+// Algorithm that finds the average of a list of numbers
 function average(list) {
   let sum = 0
 
@@ -52,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const unweightedSpan = document.getElementById('unweighted-gpa')
   const weightedSpan = document.getElementById('weighted-gpa')
   
-  const classInfoJSONString = document.querySelector('#class-info-json').textContent;
+  const classInfoJSONString = document.querySelector('#class-info').textContent;
   
   // Parse the JSON data into a JavaScript object
   const classInfo = JSON.parse(classInfoJSONString);

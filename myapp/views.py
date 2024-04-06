@@ -1,26 +1,17 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
-def index(request):
+def index(request): # renders the 'index.html' page for the URL
     return render(request, 'myapp/index.html')
 
-# def my_function(request):
-#     # Process data or perform any Python operations here
-#     result = "Hello from Python!"
-#     return JsonResponse({'result': result})
-
-def class_count(request):
+def class_count(request): # renders the 'class_count.html' page for the URL
     return render(request, 'myapp/class_count.html')
 
-from django.shortcuts import render
-
-def class_info(request):
-    class_count = request.GET.get('classCount')
-    num_classes = int(class_count) if class_count else 0
-    
+def class_info(request): 
+    class_count = request.GET.get('classCount') # Gets the class_count parameter from the URL redirection
+    num_classes = int(class_count) # Converts class_count to an integer
     # Prepare a list of numbers from 1 to num_classes
     class_numbers = range(1, num_classes + 1)
-
     # Define choices for class rigor dropdown
     RIGOR_CHOICES = [
         ('Regular', 'Regular'),
@@ -28,11 +19,10 @@ def class_info(request):
         ('AP', 'AP'),
     ]
 
-    # Pass class_numbers and rigor choices to the template context
-    return render(request, 'myapp/class_info.html', {'class_numbers': class_numbers, 'rigor_choices': RIGOR_CHOICES})
+    # Prepares a context for the parameters that will be passed into the html template
+    context = {'class_numbers': class_numbers, 'rigor_choices': RIGOR_CHOICES}
+    return render(request, 'myapp/class_info.html', context) # Passes context into the html template
 
 def calculations(request):
-    class_info_json = request.GET.get('classInfo')
-    # Do something with class_info_json, like parse and perform calculations
-    # Render calculations.html template with class_info_json as context data
-    return render(request, 'myapp/calculations.html', {'class_info_json': class_info_json})
+    class_info = request.GET.get('classInfo') # Gets the 'class_info' parameter from the URL redirection
+    return render(request, 'myapp/calculations.html', {'class_info': class_info}) # Passes parameter into the html template

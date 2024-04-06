@@ -1,4 +1,5 @@
-{% load static %}
+{% load static %} <!-- Reference static files -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +8,22 @@
     <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
 <body>
-    
+
     <div class="background">
         <div class="container">
-            <h2>Enter Number of Classes</h2>
-            <form id="classCountForm">
-                <label for="classCount">Number of Classes:</label>
-                <input type="number" id="classCount" name="classCount" min="1" required>
-                <button type="submit">Next</button>
-            </form>
+            <div class="card">
+                <form id="classCountForm">
+                    <h2>Enter Number of Classes</h2>
+                    <label class="form-text" for="classCount">Number of Classes:</label>
+                    <br>
+                    <!-- Minimum of 1 classes and maximum of 20 classes for the class count input field -->
+                    <input type="number" id="classCount" name="classCount" min="1" max="20" required>
+                    <br>
+                    <button class="card-button" type="submit">Next</button>
+                </form>
+                <!-- Sends users back to the previous page -->
+                <button class ="card-button" onclick="window.history.go(-1)">Return</button>
+            </div>
         </div>
     </div>
 
