@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import JsonResponse
 
 def index(request): # renders the 'index.html' page for the URL
     return render(request, 'myapp/index.html')
