@@ -12,15 +12,17 @@
     <div class="background">
         <div class="container">
             <div class="card">
-                <h2>Enter Class Information</h2>
+                <h2>Here You Will Enter the Information For Each Class</h2>
+                <p>Your Unweighted and Weighted GPA Will be Calculated Simultaneously</p>
+                <p>Please Enter the Required Fields for Each Class. Scroll down if you cannot see the required fields.</p>
                 <form id="classInfoForm">
                     <!-- Loops through each number in class_numbers list -->
                     {% for class_number in class_numbers %}
                     <div class="card">
                         <!-- Creates input fields for each class -->
-                        <h2>Class {{ class_number }}</h1>
+                        <h2>Class {{ class_number }}</h1><br>
                         <label for="class{{ class_number }}_name">Class Name:</label>
-                        <input type="text" id="class{{ class_number }}_name" name="class{{ class_number }}_name" required><br>
+                        <input type="text" id="class{{ class_number }}_name" name="class{{ class_number }}_name" maxlength="50" required><br>
                         <label for="class{{ class_number }}_grade">Class Grade:</label>
                         <input type="number" id="class{{ class_number }}_grade" name="class{{ class_number }}_grade" min="0" max="100" required><br>
                         <label for="class{{ class_number }}_rigor">Class Rigor:</label>
