@@ -13,6 +13,85 @@ body /* Background image and gradient for the body of the webpage */
   overflow: hidden;
 }
 
+.navbar {
+  margin: auto;
+  padding: 0.5rem 1.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link, .drop-down li {
+  list-style: none;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.drop-down {
+  position: absolute;
+  padding: 0.5rem 0;
+  margin: 0.5rem -0.5rem;
+  background: antiquewhite;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-size: 12px;
+  display: none;
+}
+
+.services {
+  transition: 0.3s ease-in-out all;
+}
+
+.nav-link:hover {
+  color: wheat;
+  border-radius: 0.5rem;
+}
+
+.services:hover .drop-down {
+  display: block;
+}
+
+.services a {
+  display: flex;
+  align-items: center;
+}
+
+.services .dropdown-icon {
+  font-size: 18px;
+  position: relative;
+  right: -5px;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out all;
+}
+
+.services:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.drop-down li:hover {
+  transition: 0.3s ease-in-out all;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.5em
+}
+
 .background { /* Gradient background for the webpage(s) */
   height: 100vh;
   width: 100%;

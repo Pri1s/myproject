@@ -5,11 +5,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Interface</title>
+  <title>CTJ GPA Calculator</title>
   <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+  <!-- Loading the Navigation Bar content through 'Template Inheritance' -->
+  {% include 'myapp/navbar.html' %} 
 
   <div class="background">
     <div class="container">
@@ -25,7 +27,7 @@
         <div class="card-button">
           <a class="button-behavior" href="{% url 'class_count' %}"><span>Begin</span></a>
           <!-- Sends users to the /class_count URL -->
-       </div>
+        </div>
       </div>
     </div>
   </div>
