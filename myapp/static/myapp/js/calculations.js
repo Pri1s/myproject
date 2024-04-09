@@ -54,6 +54,7 @@ function average(list) {
 document.addEventListener('DOMContentLoaded', function() {
   const unweightedSpan = document.getElementById('unweighted-gpa')
   const weightedSpan = document.getElementById('weighted-gpa')
+  const restartButton = document.getElementById('restart');
   
   const classInfoJSONString = document.querySelector('#class-info').textContent;
   
@@ -91,4 +92,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   unweightedSpan.textContent = averageUnweightedGPA
   weightedSpan.textContent = averageWeightedGPA
+
+  // Check if the restart button has been clicked
+  restartButton.addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent default button action
+    window.location.href = '/'; // Redirect user back to the home/index page
+  });
+
 });
+
